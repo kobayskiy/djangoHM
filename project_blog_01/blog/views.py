@@ -53,7 +53,11 @@ def index(request):
 
 def post_detail(request, id):
     template_name = 'detail.html'
-    return render(request, template_name)
+    post = posts[id]
+    context = {
+        'post':post
+    }
+    return render(request, template_name, context)
 
 
 def category_posts(request, category_slug):
