@@ -42,3 +42,19 @@ posts = [
                 укутывал их, чтобы не испортились от дождя.''',
     },
 ]
+
+def index(request):
+    template_name = 'index.html'
+    context = {
+        'posts': posts,
+    }
+    return render(request, template_name, context)
+
+
+def post_detail(request, id):
+    template_name = 'detail.html'
+    return render(request, template_name)
+
+
+def category_posts(request, category_slug):
+    return render(request, 'category.html')
